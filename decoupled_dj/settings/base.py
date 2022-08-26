@@ -6,13 +6,14 @@ environ.Env.read_env()
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env.bool("DEBUG", False)
 INSTALLED_APPS = [
-   "django.contrib.admin",
-   "django.contrib.auth",
-   "django.contrib.contenttypes",
-   "django.contrib.sessions",
-   "django.contrib.messages",
-   "django.contrib.staticfiles",
-   "users.apps.UsersConfig",
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "users.apps.UsersConfig",
+    "billing.apps.BillingConfig",
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -62,3 +63,5 @@ USE_L10N = True
 USE_TZ = True
 STATIC_URL = env("STATIC_URL")
 AUTH_USER_MODEL = "users.User"
+
+# export DJANGO_SETTINGS_MODULE=decoupled_dj.settings.development
